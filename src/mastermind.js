@@ -1,7 +1,8 @@
 const colors = require("./colors");
-
 const pickColor = (randomFn) => {
-  const randomValue = randomFn();
+  let randomValue = randomFn();
+
+  randomValue = randomValue - Math.trunc(randomValue);
 
   if (randomValue < 0.125) {
     return colors.RED;
@@ -23,6 +24,7 @@ const pickColor = (randomFn) => {
 
   throw new Error("Invalid Random Function");
 };
+
 
 module.exports = {
   pickColor
