@@ -1,5 +1,5 @@
 const colors = require('./colors')
-const {pickColor} = require("./mastermind");
+const {pickColor, generateCode} = require("./mastermind");
 
 describe('mastermind', () => {
     it ('it works', () => {
@@ -34,6 +34,17 @@ describe('mastermind', () => {
             expect(pickColor(() => 999.8)).toEqual(colors.PINK)
         })
     });
+
+    describe('generateCode', () => {
+        it('should return four colors based on the randomfunction', () => {
+            let count = 0;
+            const fakeRandom = () => {
+                count += 1;
+                return (0.125 - 0.001) * count
+            };
+            expect(generateCode(fakeRandom)).toEqual([colors.RED, colors.GREEN, colors.YELLOW, colors.BLUE])
+        })
+    })
 
    
 });

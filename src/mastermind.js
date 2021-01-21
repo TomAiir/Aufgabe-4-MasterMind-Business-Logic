@@ -25,7 +25,14 @@ const pickColor = (randomFn) => {
   throw new Error("Invalid Random Function");
 };
 
+const generateCode = (randomFn) => {
+  return [1, 2, 3, 4].map((_) => {
+    return pickColor(randomFn)
+  })
+}
+
 
 module.exports = {
-  pickColor
+  pickColor,
+  generateCode
 };
