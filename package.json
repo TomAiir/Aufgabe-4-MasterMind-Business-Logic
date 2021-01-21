@@ -1,0 +1,23 @@
+{
+  "name": "Aufgabe-4-MasterMind-Business-Logic",
+  "version": "1.0.0",
+  "description": "Vermutlich kennen Sie das Brettspiel \"Mastermind\". Ihre Aufgabe wird es sein, die Business-Logik für dieses Spiel zu implementieren. D.h. ihr Programm übernimmt die Aufgabe des Code-Generierers, welcher einen Farbcode definiert und dem Spieler Hinweise gibt.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomAiir/Aufgabe-4-MasterMind-Business-Logic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomAiir/Aufgabe-4-MasterMind-Business-Logic/issues"
+  },
+  "homepage": "https://github.com/TomAiir/Aufgabe-4-MasterMind-Business-Logic#readme",
+  "devdependencies": {
+    "jest": "^26.6.3"
+  }
+}
