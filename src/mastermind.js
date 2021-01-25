@@ -48,9 +48,31 @@ const checkCode = (code, guess) => {
   return result
 }
 
+const scrumble = (code, guess, randomFn) => {
+  const result = [];
+
+  for (var i = 0; i <= 3; i++) {
+    if (code[i] === guess[i]) {
+      result.push(hints.FITS)
+    } else if (code.indexOf(guess[i]) !== -1) {
+      result.push(hints.PARTIALLY)
+    } else {
+      result.push(hints.NOT_AT_ALL)
+    }
+    
+  }
+
+  for (var i = result.length - 1; i > 0; i--) {
+    var random = Math.floor(Math.random() * (i + 1));
+    [result[i], result[random]] = [result[random], result[i]]
+  }
+  return result
+}
+
 
 module.exports = {
   pickColor,
   generateCode,
-  checkCode
+  checkCode,
+  scrumble
 };

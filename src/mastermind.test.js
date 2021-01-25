@@ -1,6 +1,6 @@
 const colors = require('./colors')
 const hints = require('./hints')
-const {pickColor, generateCode, checkCode} = require("./mastermind");
+const {pickColor, generateCode, checkCode, scrumble} = require("./mastermind");
 
 describe('mastermind', () => {
     it ('it works', () => {
@@ -92,5 +92,28 @@ describe('mastermind', () => {
     
     })
 
-   
+    describe('scrumble', () => {
+
+        it('should randomly distribute the array', () => {
+            expect(scrumble(
+                [colors.RED, colors.GREEN, colors.YELLOW, colors.BLUE],
+                [colors.BROWN, colors.GREEN, colors.BLUE, colors.PINK]
+            )).not.toEqual([hints.NOT_AT_ALL, hints.FITS, hints.PARTIALLY, hints.NOT_AT_ALL])
+        })
+
+        it('should randomly distribute the array', () => {
+            expect(scrumble(
+                [colors.RED, colors.GREEN, colors.YELLOW, colors.BLUE],
+                [colors.RED, colors.YELLOW, colors.BLUE, colors.GREEN]
+            )).not.toEqual([hints.FITS, hints.PARTIALLY, hints.PARTIALLY, hints.PARTIALLY])
+        })
+
+        it('should randomly distribute the array', () => {
+            expect(scrumble(
+                [colors.RED, colors.GREEN, colors.YELLOW, colors.BLUE],
+                [colors.RED, colors.GREEN, colors.PINK, colors.BROWN]
+            )).not.toEqual([hints.FITS, hints.FITS, hints.NOT_AT_ALL, hints.NOT_AT_ALL]);
+    });
+
+    })
 })
